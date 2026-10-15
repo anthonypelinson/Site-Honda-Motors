@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honda Motors - Linha Oficial & História</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-main: #09090b;
+      --bg-card: #121215;
+      --bg-card-hover: #1a1a20;
+      --border-color: #27272a;
+      --border-highlight: #3f3f46;
+      --honda-red: #cc0000;
+      --honda-red-hover: #ff1a1a;
+      --text-main: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --text-dim: #71717a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background-color: rgba(9, 9, 11, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: -0.025em;
+    }
+
+    .logo-badge {
+      background-color: var(--honda-red);
+      color: #fff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--honda-red);
+    }
+
+  
+    .hero {
+      padding: 10rem 2rem 6rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+      background: radial-gradient(circle at 50% 20%, rgba(204, 0, 0, 0.15), transparent 70%);
+    }
+
+    .hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--honda-red);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
+      font-weight: 400;
+    }
+
+    .hero-shortcuts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .shortcut-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text-main);
+      text-align: left;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .shortcut-card:hover {
+      border-color: var(--honda-red);
+      transform: translateY(-4px);
+      background-color: var(--bg-card-hover);
+    }
+
+    .shortcut-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .shortcut-card p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    .shortcut-arrow {
+      color: var(--honda-red);
+      font-size: 1.2rem;
+    }
+
+    section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--honda-red);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-top: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .history-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 3rem;
+    align-items: center;
+}
+
+.history-image {
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+    .image-placeholder {
+      width: 100%;
+      height: 380px;
+      background-color: var(--bg-card);
+      border: 2px dashed var(--border-highlight);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .image-placeholder span {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    .history-text p {
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .inovacao-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .ino-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 2.5rem 2rem;
+      border-radius: 6px;
+    }
+
+    .ino-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .ino-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      height: 500px;
+      background-color: var(--bg-card);
+      border: 2px dashed var(--border-highlight);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .vitrine-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .moto-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .moto-card:hover {
+      border-color: var(--honda-red);
+      transform: translateY(-4px);
+    }
+
+    .moto-img-placeholder {
+      width: 100%;
+      height: 200px;
+      background-color: #18181b;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+    }
+
+    .moto-card > img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: #18181b;
+    border-bottom: 1px solid var(--border-color);
+    }
+
+    .moto-info {
+      padding: 1.5rem;
+    }
+
+    .moto-badge {
+      display: inline-block;
+      background-color: rgba(204, 0, 0, 0.15);
+      color: var(--honda-red);
+      border: 1px solid rgba(204, 0, 0, 0.3);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      margin-bottom: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+    }
+
+    .moto-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .moto-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-highlight);
+      border-radius: 8px;
+      max-width: 650px;
+      width: 100%;
+      padding: 2.5rem;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      color: var(--text-main);
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      background-color: var(--bg-main);
+      padding: 1.25rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .spec-item {
+      font-size: 0.9rem;
+    }
+
+    .spec-label {
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+    }
+
+    .spec-value {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .why-box {
+      border-left: 3px solid var(--honda-red);
+      padding-left: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .why-box h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .why-box p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .history-grid {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        display: none;
+      }
+      .specs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="#inicio" class="logo">
+        <span class="logo-badge">HONDA</span>
+        MOTORS
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#historia">História</a></li>
+          <li><a href="#inovacao">Inovação</a></li>
+          <li><a href="#video">Vídeo</a></li>
+          <li><a href="#vitrine">Vitrine</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="inicio" class="hero">
+    <div class="hero-container">
+      <span class="hero-tag">Engenharia & Performance</span>
+      <h1 class="hero-title">Honda Motors: A sua moto ideal está aqui!</h1>
+      <p class="hero-subtitle">
+        Da lendária Dream D-Type de 1949 aos modelos de alta tecnologia atual. Explore a história, inovações e a vitrine completa dos modelos mais icônicos da marca.
+      </p>
+
+      <div class="hero-shortcuts">
+        <a href="#vitrine" class="shortcut-card">
+          <div>
+            <h3>Vitrine de Modelos <span class="shortcut-arrow">→</span></h3>
+            <p>Conheça as motos destaque: a mais rápida, mais cara, mais econômica e cobiçada.</p>
+          </div>
+        </a>
+        <a href="#historia" class="shortcut-card">
+          <div>
+            <h3>Nossa História <span class="shortcut-arrow">→</span></h3>
+            <p>Descubra como Soichiro Honda transformou o transporte de duas rodas no mundo.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="historia">
+    <div class="section-header">
+      <span class="section-tag">Trajetória Mundial</span>
+      <h2 class="section-title">A História da Honda</h2>
+    </div>
+    
+<div class="history-grid">
+    <img
+        src="./imagens/Souichirohonda.jpg"
+        alt="Soichiro Honda"
+        class="history-image"
+    >
+
+    <div class="history-text">
+        <p>
+            Fundada em 1948 por Soichiro Honda no Japão pós-guerra,
+            a Honda Motor Co. começou como uma modesta fabricante
+            de motores auxiliares para bicicletas. O sonho de Soichiro
+            era oferecer transporte acessível, eficiente e confiável para todos.
+        </p>
+
+        <p>
+            Com o lançamento da primeira motocicleta completa em 1949,
+            a Dream D-Type, a Honda iniciou uma trajetória de engenharia
+            revolucionária. Em poucas décadas, tornou-se a maior fabricante
+            de motocicletas do planeta e dominante nas pistas de corrida mundiais.
+        </p>
+    </div>
+</div>
+
+  </section>
+
+  <section id="inovacao">
+    <div class="section-header">
+      <span class="section-tag">Engenharia de Ponta</span>
+      <h2 class="section-title">Pilares de Inovação</h2>
+    </div>
+    <div class="inovacao-cards">
+      <div class="ino-card">
+        <h3>Transmissão DCT</h3>
+        <p>Câmbio de dupla embreagem que permite trocas automáticas instantâneas sem perda de torque ou trocas manuais esportivas por botões.</p>
+      </div>
+      <div class="ino-card">
+        <h3>Motores VTEC & PGM-FI</h3>
+        <p>Injeção eletrônica de alta precisão e controle de válvulas variável para consumo mínimo de combustível com entrega imediata de força.</p>
+      </div>
+      <div class="ino-card">
+        <h3>Segurança Integrada</h3>
+        <p>Pioneirismo em sistemas de freios ABS com atuação combinada (C-ABS) e o primeiro sistema de Airbag mundial para motocicletas em produção.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="section-header">
+      <span class="section-tag">Documentário Oficial</span>
+      <h2 class="section-title">Vídeo: A História da Honda</h2>
+    </div>
+    <div style="width: 100%; height: 500px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-color);">
+      <iframe 
+        width="100%" 
+        height="100%" 
+        src="https://www.youtube.com/embed/8-WNorByyfg" 
+        title="História Oficial Honda" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <section id="vitrine">
+    <div class="section-header">
+      <span class="section-tag">Destaques Especiais</span>
+      <h2 class="section-title">Vitrine de Modelos</h2>
+    </div>
+    <div class="vitrine-grid">
+
+      <div class="moto-card" onclick="openModal('dream')">
+        <img src="./imagens/hondadreamdtype.jpg" alt="Honda Dream D-Type" style="width: 100%; border-radius: 6px;">
+        <div class="moto-info">
+          <span class="moto-badge">A Primeira Moto</span>
+          <h3 class="moto-name">Honda Dream D-Type</h3>
+          <p class="moto-desc">Foi com ela que tudo começou.
+          Lançada em 1949, a Dream D-Type representa os primeiros passos
+          de uma marca que se tornaria uma das maiores referências do mundo das motos.</p>
+        </div>
+      </div>
+
+      <div class="moto-card" onclick="openModal('hornet')">
+        <img src="./imagens/cb1000hornet.jpg" alt="Honda CB 1000 Hornet" style="width: 100%; border-radius: 6px;">
+        <div class="moto-info">
+          <span class="moto-badge">A Mais Recente</span>
+          <h3 class="moto-name">Honda CB 1000 Hornet</h3>
+          <p class="moto-desc">Com seu visual agressivo e motor de quatro cilindros,
+          a Hornet é feita para quem gosta de motos imponentes,
+          respostas rápidas e aquela sensação de potência sempre à disposição.</p>
+        </div>
+      </div>
+
+      <div class="moto-card" onclick="openModal('goldwing')">
+        <img src="./imagens/goldwing1800dcttour.webp" alt="Gold Wing 1800 DCT Tour" style="width: 100%; border-radius: 6px;">
+        <div class="moto-info">
+          <span class="moto-badge">A Mais Cara</span>
+          <h3 class="moto-name">Gold Wing 1800 DCT Tour</h3>
+          <p class="moto-desc">Imagine pegar a estrada por horas sem abrir mão do conforto.
+          A Gold Wing foi feita para isso, com muito espaço,
+          proteção contra o vento e tecnologia para transformar viagens longas
+          em momentos de prazer.</p>
+        </div>
+      </div>
+
+      <div class="moto-card" onclick="openModal('titan')">
+        <img src="./imagens/cg160titan.webp" alt="Honda CG 160 Titan" style="width: 100%; border-radius: 6px;">
+        <div class="moto-info">
+          <span class="moto-badge">A Mais Comprada</span>
+          <h3 class="moto-name">Honda CG 160 Titan</h3>
+          <p class="moto-desc">A motocicleta líder absoluta de vendas e emplacamentos no Brasil.</p>
+        </div>
+      </div>
+
+      <div class="moto-card" onclick="openModal('pop')">
+        <img src="./imagens/pop110i.jpg" alt="Pop110i ES" style="width: 100%; border-radius: 6px;">
+        <div class="moto-info">
+          <span class="moto-badge">Mais Barata & Econômica</span>
+          <h3 class="moto-name">Honda Pop 110i ES </h3>
+          <p class="moto-desc">Pequena, leve e fácil de dirigir, a Pop110i é uma ótima opção para quem precisa de um meio de transporte com manutenção barata e para o dia a dia na cidade sem gastar muito combustível. Capaz de superar a marca de 55 km por litro.</p>
+        </div>
+      </div>
+
+      <div class="moto-card" onclick="openModal('fireblade')">
+        <img src="./imagens/cbr1000rrfirebladesp.webp" alt="CBR 1000RR-R Fireblade SP" style="width: 100%; border-radius: 6px;">
+        <div class="moto-info">
+          <span class="moto-badge">A Mais Rápida</span>
+          <h3 class="moto-name">CBR 1000RR-R Fireblade SP</h3>
+          <p class="moto-desc">Projeto nascido nas pistas do MotoGP atingindo 299 km/h com 217,5 cv.</p>
+        </div>
+      </div>
+
+      <div class="moto-card" onclick="openModal('africatwin')">
+        <img src="./imagens/africatwin.jpg" alt="Africa Twin" style="width: 100%; border-radius: 6px;">
+        <div class="moto-info">
+          <span class="moto-badge">A Mais Cobiçada</span>
+          <h3 class="moto-name">Africa Twin</h3>
+          <p class="moto-desc">Nem toda estrada precisa ser asfaltada.
+          A Africa Twin é para quem gosta de viagens longas, sem abrir mão do conforto.</p>
+        </div>
+      </div>
+
+      <div class="moto-card" onclick="openModal('cb650r')">
+        <img src="./imagens/cb_650r.jpg" alt="Honda CB 650R" style="width: 100%; border-radius: 6px;">
+        <div class="moto-info">
+          <span class="moto-badge">A Mais Bonita</span>
+          <h3 class="moto-name">Honda CB 650R</h3>
+          <p class="moto-desc">Estilo Neo Sports Café com escapamento quadrivalvulado e ronco incomparável. Impossível não reconhecer esse ronco na rua.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="motoModal" class="modal-overlay" onclick="closeModalOnOuter(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <span id="modalBadge" class="moto-badge"></span>
+      <h2 id="modalTitle" style="font-size: 1.75rem; margin-top: 0.25rem;"></h2>
+      
+      <div class="specs-grid">
+        <div class="spec-item">
+          <div class="spec-label">Modelo / Ano</div>
+          <div id="modalYear" class="spec-value"></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Velocidade Máxima</div>
+          <div id="modalSpeed" class="spec-value"></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Consumo Estimado</div>
+          <div id="modalKml" class="spec-value"></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Preço Sugerido</div>
+          <div id="modalPrice" class="spec-value"></div>
+        </div>
+      </div>
+
+      <div class="why-box">
+        <h4>Por que escolher ela?</h4>
+        <p id="modalWhy"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© Honda Motors Project - Feito por Anthony Odimar Pelinson - 2DS - 2026</p>
+  </footer>
+
+  <script>
+    const motosData = {
+      dream: {
+        badge: "A Primeira Moto",
+        title: "Honda Dream D-Type",
+        year: "1949",
+        speed: "70 km/h",
+        kml: "~35 km/l",
+        price: "Item de Colecionador / Museu",
+        why: "É a gênese da Honda. Escolher a Dream D-Type é valorizar a peça histórica que deu início à maior fabricante de veículos de duas rodas do planeta."
+      },
+      hornet: {
+        badge: "A Mais Recente",
+        title: "Honda CB 1000 Hornet",
+        year: "2025 / 2026",
+        speed: "245 km/h",
+        kml: "~17 km/l",
+        price: "R$ 75.000,00 (Estimado)",
+        why: "Apresenta a linguagem visual moderna da marca com o lendário motor quatro cilindros reconfigurado para entregar máxima agilidade urbana e esportividade."
+      },
+      goldwing: {
+        badge: "A Mais Cara",
+        title: "Honda GL 1800 Gold Wing Tour DCT",
+        year: "2025 / 2026",
+        speed: "200 km/h (Limitado)",
+        kml: "~18 km/l",
+        price: "R$ 315.000,00",
+        why: "Proporciona conforto de primeira classe em viagens longas, com motor Boxer de 6 cilindros, transmissão DCT de 7 marchas, airbag e piloto automático."
+      },
+      titan: {
+        badge: "A Mais Comprada",
+        title: "Honda CG 160 Titan",
+        year: "2025 / 2026",
+        speed: "125 km/h",
+        kml: "~40 km/l",
+        price: "R$ 19.200,00",
+        why: "É a moto mais vendida do Brasil devido à sua lendária durabilidade, baixíssimo custo de manutenção e altíssima liquidez na revenda."
+      },
+      pop: {
+        badge: "Mais Barata & Econômica",
+        title: "Honda Pop 110i ES",
+        year: "2025 / 2026",
+        speed: "100 km/h",
+        kml: "~55 km/l",
+        price: "R$ 9.690,00",
+        why: "Possui o menor preço de aquisição da categoria e uma economia de combustível imbatível, sendo ideal para deslocamentos diários econômicos."
+      },
+      fireblade: {
+        badge: "A Mais Rápida",
+        title: "Honda CBR 1000RR-R Fireblade SP",
+        year: "2025 / 2026",
+        speed: "299 km/h (Limitado)",
+        kml: "~13 km/l",
+        price: "R$ 198.000,00",
+        why: "Uma autêntica máquina de corrida com 217,5 cv desenvolvida em parceria com a HRC para quem busca o limite da performance em pista."
+      },
+      africatwin: {
+        badge: "A Mais Cobiçada",
+        title: "Honda CRF 1100L Africa Twin",
+        year: "2025 / 2026",
+        speed: "200 km/h",
+        kml: "~21 km/l",
+        price: "R$ 109.000,00",
+        why: "Motos big trail desejadas por pessoas que buscam uma moto boa e custo-benefício para longas viagens, seja em estradas de asfalto ou terra com total controle e robustez."
+      },
+      cb650r: {
+        badge: "A Mais Bonita",
+        title: "Honda CB 650R Neo Sports",
+        year: "2025 / 2026",
+        speed: "210 km/h",
+        kml: "~20 km/l",
+        price: "R$ 52.500,00",
+        why: "Design premiado Neo Sports Café combinando linhas retrô minimalistas com tecnologia moderna e um som inconfundível de 4 cilindros."
+      }
+    };
+
+    function openModal(id) {
+      const data = motosData[id];
+      if (!data) return;
+
+      document.getElementById('modalBadge').innerText = data.badge;
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalYear').innerText = data.year;
+      document.getElementById('modalSpeed').innerText = data.speed;
+      document.getElementById('modalKml').innerText = data.kml;
+      document.getElementById('modalPrice').innerText = data.price;
+      document.getElementById('modalWhy').innerText = data.why;
+
+      document.getElementById('motoModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('motoModal').classList.remove('active');
+    }
+
+    function closeModalOnOuter(e) {
+      if (e.target.id === 'motoModal') {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
